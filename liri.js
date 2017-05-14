@@ -8,7 +8,7 @@ if(process.argv[2] === "movie-this"){
   }
 
   // Then run a request to the OMDB API with the movie specified
-  var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
+  var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&tomatoes=true&r=json";
 
 
   // This line is just to help us debug against the actual URL.
@@ -29,7 +29,7 @@ if(process.argv[2] === "movie-this"){
       console.log("Language: " + JSON.parse(body).Language);
       console.log("Plot: " + JSON.parse(body).Plot);
       console.log("Actors: " + JSON.parse(body).Actors);
-      console.log("Rotten Tomatoes: " + JSON.parse(body).Released);
+      console.log("Rotten Tomatoes: " + JSON.parse(body).tomatoURL);
     }
   });
 }
